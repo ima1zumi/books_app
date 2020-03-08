@@ -36,3 +36,4 @@ yarn-debug.log*
 .yarn-integrity
 
 .history/
+public/uploads/book/picture

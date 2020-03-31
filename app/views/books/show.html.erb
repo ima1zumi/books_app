@@ -1,12 +1,10 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <strong><%= Book.human_attribute_name(:title) %>:</strong>
   <%= @book.title %>
 </p>
 
 <p>
-  <strong><%= t Book.human_attribute_name(:memo) %>:</strong>
+  <strong><%= Book.human_attribute_name(:memo) %>:</strong>
   <%= @book.memo %>
 </p>
 
@@ -16,7 +14,7 @@
 </p>
 
 <p>
-  <strong><%= t Book.human_attribute_name(:picture) %>:</strong>
+  <strong><%= Book.human_attribute_name(:picture) %>:</strong>
   <%= image_tag(@book.picture_url) if @book.picture.present? %>
 </p>
 

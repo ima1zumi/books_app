@@ -18,6 +18,9 @@
         <%= link_to t("users.layout.show"), user_path(current_user.id) %> |
         <%= link_to t("users.layout.edit"), edit_user_registration_path %> |
         <%= link_to t("users.layout.logout"), destroy_user_session_path, method: :delete %>
+      <% else %>
+        <%= link_to t("users.layout.login"), new_user_session_path %> |
+        <%= link_to t("users.layout.new"), new_user_registration_path %>
       <% end %>
     </p>
   </body>

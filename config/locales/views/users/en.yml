@@ -1,0 +1,10 @@
+en:
+  users:
+    layout:
+      new: new
+      show: Show profile
+      edit: Edit profile
+      login: Login
+      logout: Logout
+    show:
+      title: User profile

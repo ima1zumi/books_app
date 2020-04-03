@@ -59,3 +59,5 @@ gem "awesome_print"
 gem "carrierwave"
 
 gem "kaminari"
+gem "devise"
+gem "devise-i18n"

@@ -1,0 +1,10 @@
+ja:
+  users:
+    layout:
+      new: 新規登録
+      show: プロフィール表示
+      edit: プロフィール編集
+      login: ログイン
+      logout: ログアウト
+    show:
+      title: ユーザー情報

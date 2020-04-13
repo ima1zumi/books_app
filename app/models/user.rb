@@ -7,6 +7,8 @@ class User < ApplicationRecord
           :recoverable, :rememberable, :validatable, :omniauthable
   validates :name, presence: true, length: { maximum: 30 }
 
+  has_one_attached :avatar
+
   def self.find_for_github_oauth(auth, signed_in_resource = nil)
     where(provider: auth.provider, uid: auth.uid).first_or_create! do |user|
       user.name = auth.info.name

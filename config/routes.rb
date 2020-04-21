@@ -11,7 +11,11 @@ Rails.application.routes.draw do
       registrations: "users/registrations",
     }
     resources :books
-    resources :users, only: [:show]
+    resources :users, only: [:show] do
+      resources :user_follows, only: [:create, :destroy]
+      get :follows, on: :member
+      get :followers, on: :member
+    end
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

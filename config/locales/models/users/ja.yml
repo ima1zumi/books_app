@@ -5,7 +5,7 @@ ja:
     attributes:
       user:
         email: メールアドレス
-        name: 名前
+        name: ユーザー名
         zipcode: 郵便番号
         address: 住所
         profile: 自己紹介

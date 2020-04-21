@@ -11,6 +11,8 @@ ja:
       new: 新規作成しました！
       update: 更新しました！
       destroy: 削除しました！
+      login_alert: ログインしてください。
+      permission_alert: 権限がありません。
     message:
       destroy_alert: 本当に削除しますか？
   activerecord:

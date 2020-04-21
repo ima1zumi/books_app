@@ -8,6 +8,15 @@ class User < ApplicationRecord
   validates :name, presence: true, length: { maximum: 30 }
 
   has_one_attached :avatar
+  has_many :books
+  has_many :active_relationships, class_name: "UserFollow", foreign_key: :following_id
+  has_many :followings, through: :active_relationships, source: :follower
+  has_many :passive_relationships, class_name: "UserFollow", foreign_key: :follower_id
+  has_many :followers, through: :passive_relationships, source: :following
+
+  def followed_by?(user)
+    passive_relationships.find_by(following_id: user.id).present?
+  end
 
   def self.find_for_github_oauth(auth, signed_in_resource = nil)
     where(provider: auth.provider, uid: auth.uid).first_or_create! do |user|

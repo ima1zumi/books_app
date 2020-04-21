@@ -11,6 +11,8 @@ en:
       new: Book was successfully created.
       update: Book was successfully updated.
       destroy: Book was successfully destroyed.
+      login_alert: Please login first.
+      permission_alert: Permission denied.
     message:
       destroy_alert: Are you sure?
   activerecord:

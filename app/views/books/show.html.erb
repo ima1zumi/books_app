@@ -1,4 +1,9 @@
 <p>
+  <strong><%= User.human_attribute_name(:user) %>:</strong>
+  <%= link_to User.find_by(id: @book.user_id).name, user_path(@book.user_id) %>
+</p>
+
+<p>
   <strong><%= Book.human_attribute_name(:title) %>:</strong>
   <%= @book.title %>
 </p>

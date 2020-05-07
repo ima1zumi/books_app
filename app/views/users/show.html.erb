@@ -28,3 +28,5 @@
   <strong><%= User.human_attribute_name(:profile) %>:</strong>
   <%= @user.profile %>
 </p>
+
+<%= render 'follow_form' if user_signed_in? %>

@@ -3,7 +3,7 @@
 require "test_helper"
 
 class FriendshipTest < ActiveSupport::TestCase
-  def setup
+  setup do
     @friendship = Friendship.new(follower_id: users(:one).id, followed_id: users(:two).id)
   end
 

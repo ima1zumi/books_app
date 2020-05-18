@@ -19,8 +19,10 @@
       <td><%= book.author %></td>
       <td><%= book.picture %></td>
       <td><%= link_to t("directory.button.show"), book %></td>
-      <td><%= link_to t("directory.button.edit"), edit_book_path(book) %></td>
-      <td><%= link_to t("directory.button.destroy"), book, method: :delete, data: { confirm: t("directory.message.destroy_alert") } %></td>
+      <% if current_user.id == book.user_id %>
+        <td><%= link_to t("directory.button.edit"), edit_book_path(book) %></td>
+        <td><%= link_to t("directory.button.destroy"), book, method: :delete, data: { confirm: t("directory.message.destroy_alert") } %></td>
+      <% end %>
     </tr>
     <% end %>
   </tbody>

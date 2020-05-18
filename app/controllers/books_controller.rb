@@ -2,17 +2,14 @@
 
 class BooksController < ApplicationController
   before_action :ensure_login_user, only: [:new, :create]
-  before_action :ensure_correct_user, only: [:edit, :update, :destroy]
   before_action :set_book, only: [:show, :edit, :update, :destroy]
 
   # GET /books
-  # GET /books.json
   def index
     @books = Book.page(params[:page])
   end
 
   # GET /books/1
-  # GET /books/1.json
   def show
   end
 
@@ -23,10 +20,10 @@ class BooksController < ApplicationController
 
   # GET /books/1/edit
   def edit
+    @book = current_user.books.find(params[:id])
   end
 
   # POST /books
-  # POST /books.json
   def create
     @book = Book.new(book_params)
     @book.user_id = current_user.id
@@ -38,9 +35,8 @@ class BooksController < ApplicationController
   end
 
   # PATCH/PUT /books/1
-  # PATCH/PUT /books/1.json
   def update
-    @book.user_id = current_user.id
+    @book = current_user.books.find(params[:id])
     if @book.update(book_params)
       redirect_to @book, notice: t("directory.flash.update")
     else
@@ -49,8 +45,8 @@ class BooksController < ApplicationController
   end
 
   # DELETE /books/1
-  # DELETE /books/1.json
   def destroy
+    @book = current_user.books.find(params[:id]).destroy
     @book.destroy
     redirect_to books_url, notice: t("directory.flash.destroy")
   end

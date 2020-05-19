@@ -14,7 +14,9 @@
     <p class="alert"><%= alert %></p>
     <%= yield %>
     <p>
+      <%= link_to t("directory.button.back"), root_path %> |
       <% if user_signed_in? %>
+        <%= link_to t("friendships.layout.index"), friendships_path %> |
         <%= link_to t("users.layout.show"), user_path(current_user.id) %> |
         <%= link_to t("users.layout.edit"), edit_user_registration_path %> |
         <%= link_to t("users.layout.logout"), destroy_user_session_path, method: :delete %>

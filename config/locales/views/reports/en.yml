@@ -1,0 +1,8 @@
+en:
+  comments:
+    index:
+      title: Comments
+    new:
+      title: New Comment
+    edit:
+      title: Editing Comment

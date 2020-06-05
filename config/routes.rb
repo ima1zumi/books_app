@@ -10,13 +10,19 @@ Rails.application.routes.draw do
     devise_for :users, skip: :omniauth_callbacks, controllers: {
       registrations: "users/registrations",
     }
-    resources :books
+    resources :books do
+      resources :comments, module: :books
+    end
+
     resources :users, only: [:show] do
       member do
         get :following, :followers
       end
     end
     resources :friendships, only: [:index, :create, :destroy]
+    resources :reports do
+      resources :comments, module: :reports
+    end
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

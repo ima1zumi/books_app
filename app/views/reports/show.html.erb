@@ -1,0 +1,19 @@
+<p>
+  <strong><%= Report.human_attribute_name(:title) %>:</strong>
+  <%= @report.title %>
+</p>
+
+<p>
+  <strong><%= t("activerecord.models.user") %>:</strong>
+  <%= link_to User.find_by(id: @report.user_id).name, user_path(@report.user_id) %>
+</p>
+
+<p>
+  <strong><%= Report.human_attribute_name(:description) %>:</strong>
+  <%= @report.description %>
+</p>
+
+<%= link_to t("comments.index.title"), report_comments_path(@report) %> |
+<% if current_user == @report.user %>
+  <%= link_to t("directory.button.edit"), edit_report_path(@report) %>
+<% end %>

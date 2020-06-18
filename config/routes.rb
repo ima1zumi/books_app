@@ -11,7 +11,7 @@ Rails.application.routes.draw do
       registrations: "users/registrations",
     }
     resources :books do
-      resources :comments, module: :books
+      resources :comments, controller: "books/comments"
     end
 
     resources :users, only: [:show] do
@@ -21,7 +21,7 @@ Rails.application.routes.draw do
     end
     resources :friendships, only: [:index, :create, :destroy]
     resources :reports do
-      resources :comments, module: :reports
+      resources :comments, controller: "reports/comments"
     end
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

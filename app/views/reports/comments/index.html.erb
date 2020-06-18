@@ -1,4 +1,4 @@
-<h1><%= t ".title" %></h1>
+<h1><%= t("comments.index.title") %></h1>
 
 <table>
   <thead>
@@ -15,8 +15,8 @@
       <td><%= comment.description %></td>
       <td><%= link_to User.find_by(id: comment.user_id).name, user_path(comment.user_id) %></td>
       <% if current_user == comment.user %>
-      <td><%= link_to t("directory.button.edit"), [:edit, @commentable, comment] %></td>
-      <td><%= link_to t("directory.button.destroy"), [@commentable, comment], method: :delete, data: { confirm: t("directory.message.destroy_alert") } %></td>
+      <td><%= link_to t("directory.button.edit"), [:edit, @report, comment] %></td>
+      <td><%= link_to t("directory.button.destroy"), [@report, comment], method: :delete, data: { confirm: t("directory.message.destroy_alert") } %></td>
       <% end %>
     </tr>
     <% end %>
@@ -25,4 +25,4 @@
 
 <br>
 
-<%= link_to t("directory.button.new"), [:new, @commentable, :comment] %>
+<%= link_to t("directory.button.new"), [:new, @report, :comment] %>

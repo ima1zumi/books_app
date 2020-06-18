@@ -1,0 +1,28 @@
+<h1><%= t("comments.index.title") %></h1>
+
+<table>
+  <thead>
+    <tr>
+      <th><%= Comment.human_attribute_name(:description) %></th>
+      <th><%= t("activerecord.models.user") %></th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @comments.each do |comment| %>
+    <tr>
+      <td><%= comment.description %></td>
+      <td><%= link_to User.find_by(id: comment.user_id).name, user_path(comment.user_id) %></td>
+      <% if current_user == comment.user %>
+      <td><%= link_to t("directory.button.edit"), [:edit, @book, comment] %></td>
+      <td><%= link_to t("directory.button.destroy"), [@book, comment], method: :delete, data: { confirm: t("directory.message.destroy_alert") } %></td>
+      <% end %>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to t("directory.button.new"), [:new, @book, :comment] %>

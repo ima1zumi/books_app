@@ -18,7 +18,7 @@ class Reports::CommentsController < ApplicationController
     @comment.user = current_user
 
     if @comment.save
-      redirect_to [@report, :comments], notice: t("directory.flash.new")
+      redirect_to report_comments_path, notice: t("directory.flash.new")
     else
       render :new
     end
@@ -29,7 +29,7 @@ class Reports::CommentsController < ApplicationController
 
   def update
     if @comment.update(comment_params)
-      redirect_to [@report, :comments], notice: t("directory.flash.update")
+      redirect_to report_comments_path, notice: t("directory.flash.update")
     else
       render :edit
     end
@@ -37,7 +37,7 @@ class Reports::CommentsController < ApplicationController
 
   def destroy
     @comment.destroy
-    redirect_to [@report, :comments], notice: t("directory.flash.destroy")
+    redirect_to report_comments_path, notice: t("directory.flash.destroy")
   end
 
   private

@@ -19,7 +19,7 @@
       <td><%= book.author %></td>
       <td><%= book.picture %></td>
       <td><%= link_to t("directory.button.show"), book %></td>
-      <% if current_user.id == book.user_id %>
+      <% if current_user && current_user.id == book.user_id %>
         <td><%= link_to t("directory.button.edit"), edit_book_path(book) %></td>
         <td><%= link_to t("directory.button.destroy"), book, method: :delete, data: { confirm: t("directory.message.destroy_alert") } %></td>
       <% end %>
@@ -31,7 +31,7 @@
 <br>
 
 
-<%= link_to t("directory.button.new_book"), new_book_path %> |
+<%= link_to t("directory.button.new"), new_book_path %> |
 <% if I18n.locale.to_s == "en" %>
 <%= link_to("日本語", :locale => "ja") %>
 <% else %>

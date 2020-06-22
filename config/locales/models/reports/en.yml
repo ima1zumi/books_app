@@ -1,0 +1,10 @@
+en:
+  activerecord:
+    models:
+      report: Report
+    attributes:
+      report:
+        title: Title
+        description: Description
+        created_at: Created
+        updated_at: Updated

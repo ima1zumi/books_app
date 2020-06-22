@@ -15,6 +15,7 @@
     <%= yield %>
     <p>
       <%= link_to t("directory.button.back"), root_path %> |
+      <%= link_to t("reports.index.title"), reports_path %> |
       <% if user_signed_in? %>
         <%= link_to t("friendships.layout.index"), friendships_path %> |
         <%= link_to t("users.layout.show"), user_path(current_user.id) %> |

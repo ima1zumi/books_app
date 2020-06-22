@@ -1,0 +1,8 @@
+ja:
+  reports:
+    index:
+      title: 日報一覧
+    new:
+      title: 新規登録
+    edit:
+      title: 編集

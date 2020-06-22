@@ -2,7 +2,7 @@
 en:
   directory:
     button:
-      new_book: Create
+      new: Create
       show: Show
       edit: Edit
       destroy: Destroy

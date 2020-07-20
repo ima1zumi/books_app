@@ -1,0 +1,11 @@
+book_1:
+  user: user_1
+  title: プラネタリウムの外側
+  memo: 削除する本
+  author: 早瀬 耕
+
+book_2:
+  user: user_1
+  title: ニューロマンサー
+  memo: 面白い
+  author: ウィリアム・ギブスン

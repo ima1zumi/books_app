@@ -15,5 +15,6 @@
 
 <%= link_to t("comments.index.title"), report_comments_path(@report) %> |
 <% if current_user == @report.user %>
-  <%= link_to t("directory.button.edit"), edit_report_path(@report) %>
+  <%= link_to t("directory.button.edit"), edit_report_path(@report) %> |
+  <%= link_to t("directory.button.destroy"), @report, method: :delete, data: { confirm: t("directory.message.destroy_alert") } %>
 <% end %>

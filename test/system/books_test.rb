@@ -45,11 +45,14 @@ class BooksTest < ApplicationSystemTestCase
   end
 
   test "destroy book" do
-    visit "ja/books"
+    id = books(:book_2).id
+    visit "ja/books/#{id}"
+
     page.accept_confirm do
       click_on "削除", match: :first
     end
 
     assert_text "削除しました！"
+    assert_not Book.exists?(id)
   end
 end

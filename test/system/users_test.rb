@@ -68,10 +68,15 @@ class UsersTest < ApplicationSystemTestCase
   end
 
   test "destroy an user" do
+    id = users(:user_2).id
     signin_user("taikai@example.com", "password")
+
     visit "ja/users/edit"
     page.accept_confirm do
       click_on "アカウント削除"
     end
+
+    assert_text "アカウントを削除しました。またのご利用をお待ちしております。"
+    assert_not User.exists?(id)
   end
 end

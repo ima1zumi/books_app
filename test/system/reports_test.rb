@@ -40,11 +40,14 @@ class ReportsTest < ApplicationSystemTestCase
   end
 
   test "destroy report" do
-    visit "ja/reports"
+    id = reports(:report_2).id
+    visit "ja/reports/#{id}"
+
     page.accept_confirm do
       click_on "削除", match: :first
     end
 
     assert_text "削除しました！"
+    assert_not Report.exists?(id)
   end
 end

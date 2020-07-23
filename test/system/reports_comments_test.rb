@@ -38,11 +38,14 @@ class ReportsCommentsTest < ApplicationSystemTestCase
   end
 
   test "destroy comment" do
-    visit "ja/reports"
+    id = comments(:report_comment_2).id
+    visit "ja/reports/#{comments(:report_comment_2).commentable.id}/comments/#{id}/edit"
+
     page.accept_confirm do
       click_on "削除", match: :first
     end
 
     assert_text "削除しました！"
+    assert_not Comment.exists?(id)
   end
 end

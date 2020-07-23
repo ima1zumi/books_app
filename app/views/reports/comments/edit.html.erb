@@ -2,4 +2,5 @@
 
 <%= render 'form', comment: @comment %>
 
-<%= link_to t("directory.button.back"), report_comments_path %>
+<%= link_to t("directory.button.back"), report_comments_path %> |
+<%= link_to t("directory.button.destroy"), report_comment_path, method: :delete, data: { confirm: t("directory.message.destroy_alert") } %>

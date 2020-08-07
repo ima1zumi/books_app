@@ -1,0 +1,19 @@
+report_comment_1:
+  user: user_1
+  commentable: report_1 (Report)
+  description: 頑張りましょう
+
+report_comment_2:
+  user: user_1
+  commentable: report_1 (Report)
+  description: 削除するコメント
+
+book_comment_1:
+  user: user_1
+  commentable: book_1 (Book)
+  description: いいですね。
+
+book_comment_2:
+  user: user_1
+  commentable: book_1 (Book)
+  description: 削除するコメント

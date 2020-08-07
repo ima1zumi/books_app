@@ -1,11 +1,17 @@
-one:
+user_1:
   name: "John Wick"
   email: "john@example.com"
   uid: 1
   encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
 
-two:
-  name: "Hoge Taro"
-  email: "hoge@example.com"
+user_2:
+  name: "退会します"
+  email: "taikai@example.com"
   uid: 2
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
+
+user_3:
+  name: "ありす"
+  email: "alice@example.com"
+  uid: 3
   encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>

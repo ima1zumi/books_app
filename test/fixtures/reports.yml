@@ -1,0 +1,9 @@
+report_1:
+  user: user_1
+  title: 初めてのnippo
+  description: yorosikuonegaisimasu
+
+report_2:
+  user: user_1
+  title: 削除する日報
+  description: 削除します
